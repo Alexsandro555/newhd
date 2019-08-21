@@ -22,7 +22,9 @@ class SiteController extends Controller
   {
     return view('index')->with('articleTypes', ArticleType::whereHas('articles',function($query) {
       $query->where('mainpage',1)->where('active',1);
-    })->where('active',1)->get());
+    })->with(['articles' => function($query) {
+      $query->where('mainpage',1)->where('active',1);
+    }])->where('active',1)->get());
   }
 
   public function catalog($slug)
