@@ -1,0 +1,25 @@
+.content__marg {
+  margin-top: 60px;
+}
+
+.content__catalog-table {
+  background-color: white;
+  border-color: red;
+}
+
+.content__catalog-table th {
+  background-color: #00A6C7;
+  color: white;
+}
+
+div[name="main"] {
+  font-size: 11pt;
+}
+
+div[name="main"]>p {
+  font-size: 11pt;
+}
+
+.tbl-title {
+  max-width: 400px;
+}

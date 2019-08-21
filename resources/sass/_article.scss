@@ -1,0 +1,47 @@
+.articles-category {
+  //width: 852px;
+}
+
+.articles-category__item {
+  display: inline-block;
+  width: 24.6%;
+  height: 280px;
+  vertical-align: top;
+  background: url('#{$path}/header_sep.png' ) no-repeat right center;
+  border: none !important;
+}
+
+.articles-category__image {
+  display: inline-block;
+  width:100%;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+}
+
+.articles-category__image img {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 200px;
+}
+
+.articles-category__link {
+  display: block;
+  text-align: center;
+}
+
+.articles-category__link a {
+  color: black;
+  text-decoration: underline;
+}
+
+.article__tab-active {
+  border-left:6px solid #3970a4 !important;
+  text-decoration: none !important;
+  color:#3970a4 !important;
+}
+
+.articles__image {
+  max-width: 200px;
+}
