@@ -16,7 +16,7 @@ class AddFieldsMinititleOrderformMainpageLeftmenuPreviewArticlesTable extends Mi
   public function up()
   {
     Schema::table($this->tableName, function (Blueprint $table) {
-      $table->string('minititle', 255)->nullable()->comment('Сокращенный заголовок');
+      $table->string('minititle', 255)->nullable()->comment('Сокращенное наименование на главной странице');
       $table->boolean('orderform')->nullable()->comment('Отображать форму заказа');
       $table->boolean('mainpage')->nullable()->comment('Отображать на главной странице');
       $table->boolean('leftmenu')->nullable()->comment('Отображать в левом меню');

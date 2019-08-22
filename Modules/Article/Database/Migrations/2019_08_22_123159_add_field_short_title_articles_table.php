@@ -16,7 +16,7 @@ class AddFieldShortTitleArticlesTable extends Migration
   public function up()
   {
     Schema::table($this->tableName, function (Blueprint $table) {
-      $table->string('short_title', 255)->nullable();
+      $table->string('short_title', 255)->nullable()->comment('Наименование на главной странице');
     });
   }
 

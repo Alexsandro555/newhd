@@ -74,7 +74,7 @@
                 @endforeach
               </div>
               <div class="articles-category__link">
-                <a href='{{$article->url_key}}.html'><strong>{{$article->minititle}}</strong><br>{{$article->title}}</a>
+                <a href='{{$article->url_key}}.html'><strong>{{$article->minititle}}</strong><br>{{$article->short_title?$article->short_title:$article->title}}</a>
               </div>
             </div>
           @endforeach
