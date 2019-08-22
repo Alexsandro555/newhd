@@ -27,6 +27,12 @@ class Article extends Model
         'max' => 255
       ]
     ],
+    'short_title' => [
+      'enabled' => true,
+      'validations' => [
+        'max' => 255
+      ]
+    ],
     'content' => [
       'enabled' => true
     ],
