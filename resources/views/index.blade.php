@@ -66,8 +66,7 @@
                   @foreach($file->config as $key=>$conf)
                     @foreach($conf as $key=>$item)
                       @if($key === "main")
-                        Есть изображение
-                        <!--<img src="/storage/{{$item['filename']}}"/>-->
+                        <img src="/storage/{{$item['filename']}}"/>
                       @endif
                     @endforeach
                   @endforeach
