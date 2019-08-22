@@ -21,19 +21,10 @@ class SiteController extends Controller
 {
   public function index()
   {
-    dd(ArticleType::whereHas('articles',function($query) {
-      $query->where('mainpage',1)->where('active',1);
-    })->with(['articles' => function($query) {
-      $query->with(['files' => function($query) {
-        $query->where('type_file_id', TypeFile::where('name', 'image-article')->first()->id);
-      }])->where('mainpage',1)->where('active',1)->orderBy('sort', 'asc');
-    }])->where('active',1)->get());
     return view('index')->with('articleTypes', ArticleType::whereHas('articles',function($query) {
       $query->where('mainpage',1)->where('active',1);
     })->with(['articles' => function($query) {
-      $query->with(['files' => function($query) {
-        $query->where('type_file_id', TypeFile::where('name', 'image-article')->first()->id);
-      }])->where('mainpage',1)->where('active',1)->orderBy('sort', 'asc');
+      $query->with(['files'])->where('mainpage',1)->where('active',1)->orderBy('sort', 'asc');
     }])->where('active',1)->get());
   }
 
