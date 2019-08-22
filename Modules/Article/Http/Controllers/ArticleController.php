@@ -16,6 +16,9 @@ class ArticleController extends Controller
 
   public function show($slug) {
     $article = Article::where('url_key', $slug)->firstOrFail();
+    if(!$article->active) {
+      return redirect()->route('main');
+    }
     return view('article::show', compact('article'));
   }
 }

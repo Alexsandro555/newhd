@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'SiteController@index');
+Route::get('/', ['uses' => 'SiteController@index', 'as' => 'main']);
 Route::get('/slides', 'SiteController@slides');
 Route::get('/admin', ['uses' => '\Modules\Auth\Http\Controllers\AdminController@index', 'as' => 'master']);
 Route::get('/{slug}.html', '\Modules\Article\Http\Controllers\ArticleController@show');
