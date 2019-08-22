@@ -15,6 +15,7 @@ use Modules\Article\Models\ArticleType;
 use Illuminate\Support\Facades\Cache;
 use Carbon\Carbon;
 use Modules\Slide\Entities\Slide;
+use Modules\Files\Entities\TypeFile;
 
 class SiteController extends Controller
 {
