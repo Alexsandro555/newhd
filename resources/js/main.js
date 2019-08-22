@@ -45,6 +45,7 @@ const app = new Vue({
   store,
   methods: {
     selectTab(value) {
+      console.log(value)
       this.selectedAction = value;
       this.$children.forEach(tab => {
         tab.$attrs.name == value? tab.isActive = true: tab.isActive = false;
