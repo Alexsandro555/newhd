@@ -22,10 +22,28 @@ class TypeFileTableSeeder extends Seeder
           'config' => '{
             "resize": [
               {
+			          "name": "full",
+                "width": "1024",
+                "height": "780",
+                "absolute": false
+              },
+              {
+			          "name": "medium-h",
+                "width": "580",
+                "height": "242",
+                "absolute": false
+              },
+              {
+			          "name": "medium-s",
+                "width": "449",
+                "height": "242",
+                "absolute": false
+              },
+              {
 			          "name": "medium",
                 "width": "345",
                 "height": "240",
-                "absolute": true
+                "absolute": false
               }
             ],
             "maxsize": "20000",

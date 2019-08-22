@@ -8,8 +8,8 @@ class TabsObserver
 {
   private function replace($content)
   {
-    $content=str_replace('<p>','',$content);
-    $content=str_replace('</p>','',$content);
+    $content=str_replace('<div>','',$content);
+    $content=str_replace('</div>','',$content);
     $content = preg_replace ('/:selected/i',':selected="true"', $content);
     $content = preg_replace ( '/\[name="(\w+)"\s*(:selected="true")*\]/i', '<tab $2 name="$1">', $content);
     $content = preg_replace ( '/\[end\]/', '</tab>', $content);
