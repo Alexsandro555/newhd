@@ -23,7 +23,7 @@ class SiteController extends Controller
     return view('index')->with('articleTypes', ArticleType::whereHas('articles',function($query) {
       $query->where('mainpage',1)->where('active',1);
     })->with(['articles' => function($query) {
-      $query->where('mainpage',1)->where('active',1)->orderBy('sort', 'desc');
+      $query->where('mainpage',1)->where('active',1)->orderBy('sort', 'asc');
     }])->where('active',1)->get());
   }
 
