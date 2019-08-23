@@ -21,12 +21,12 @@ class CallbackController extends Controller
   {
     $model = Callback::create([
       'name' => $request->fio,
-      'company_name' => $request->company_name,
-      'telephone' => $request->telephone,
+      'company_name' => $request->company,
+      'telephone' => $request->tel,
       'email' => $request->email,
-      'comment' => $request->comment
+      'comment' => $request->description
     ]);
     Mail::to("xanmaster08@rambler.ru")->send(new CallbackShipped($model));
-    return [];
+    return view('callback::sucessfull');
   }
 }

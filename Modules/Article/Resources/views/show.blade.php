@@ -22,6 +22,27 @@
       </li>
     </ul>
   </div>
+
+  <div class="information">
+    <ul class="article__tab-action">
+      @foreach($relatedArticles as $relatedArticle)
+        <li>
+          <a href="{{$relatedArticle->url_key}}">
+            @if(count($relatedArticle->files)>0)
+              @foreach($relatedArticle->files[0]->config as $key=>$conf)
+                @foreach($conf as $key=>$item)
+                  @if($key == "small")
+                    <img src="/storage/{{$item['filename']}}" class="fleft"/>
+                  @endif
+                @endforeach
+              @endforeach
+            @endif
+            {{$relatedArticle->title}}
+          </a>
+        </li>
+      @endforeach
+    </ul>
+  </div>
 @endsection
 
 @section('content')

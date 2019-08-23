@@ -1,4 +1,4 @@
-<form action="/order" method="post" name="zakaz_tovara">
+<form action="/callback" method="post" name="zakaz_tovara">
   <table class="orderform" cellpadding="0" cellspacing="0">
     <tbody valign="top">
     <tr valign="middle">

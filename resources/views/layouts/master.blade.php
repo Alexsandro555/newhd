@@ -73,6 +73,7 @@
         </tbody>
       </table>
     </div>
+    <callback></callback>
   </div>
 </center>
 <script src="{{asset('js/main.js')}}" type="application/javascript"></script>
