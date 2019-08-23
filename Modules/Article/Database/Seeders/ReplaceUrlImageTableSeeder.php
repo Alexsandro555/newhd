@@ -23,6 +23,7 @@ class ReplaceUrlImageTableSeeder extends Seeder
           $article->save();
           return $article;
         });
+        //
 
         // $this->call("OthersTableSeeder");
     }
