@@ -37,7 +37,7 @@
                 @endforeach
               @endforeach
             @endif
-            {{$relatedArticle->short_title}}
+            {{$relatedArticle->short_title?$relatedArticle->short_title:$relatedArticle->title}}
           </a>
         </li>
       @endforeach
