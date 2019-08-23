@@ -31,7 +31,7 @@
             @if(count($relatedArticle->files)>0)
               @foreach($relatedArticle->files[0]->config as $key=>$conf)
                 @foreach($conf as $key=>$item)
-                  @if($key == "small")
+                  @if($key == "extrasmall")
                     <img src="/storage/{{$item['filename']}}" class="fleft"/>
                   @endif
                 @endforeach
