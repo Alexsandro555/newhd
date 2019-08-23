@@ -32,7 +32,7 @@
         <span>
             {{$article->title}}
         </span>
-  </h1>
+  </h1><br>
   <div class="hydronix-content">
     {!! $article->content !!}
   </div>
