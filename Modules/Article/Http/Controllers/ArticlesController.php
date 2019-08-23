@@ -47,7 +47,7 @@ class ArticlesController extends Controller
   {
     $article = Article::findOrFail($request->id);
     $article->fill($request->all());
-    $article->url_key = \Slug::make(str_replace("/"," ",$article->title));
+    //$article->url_key = \Slug::make(str_replace("/"," ",$article->title));
     $content = $article->content;
     $article->content = $this->replace($content);
     $article->save();
