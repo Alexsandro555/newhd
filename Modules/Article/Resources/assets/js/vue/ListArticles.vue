@@ -24,6 +24,9 @@
                   <v-icon v-else color="pink">close</v-icon>
                 </td>
                 <td class="justify-center layout px-0">
+                  <v-btn @click="goToPage(props.item.url_key)" icon class="mx-0">
+                    <v-icon>find_in_page</v-icon>
+                  </v-btn>
                   <v-btn icon class="mx-0" @click="$router.push({name: 'edit-articles', params: {id: props.item.id.toString()}})">
                     <v-icon color="teal">edit</v-icon>
                   </v-btn>
@@ -118,6 +121,9 @@
         if (confirm('Вы уверены что хотите удалить запись?')) {
           this.delete(item.id)
         }
+      },
+      goToPage(url_key) {
+        window.open('/'+url_key+'.html', '_blank')
       }
     }
   }

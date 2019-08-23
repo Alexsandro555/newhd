@@ -6,6 +6,7 @@
         <v-card>
           <v-card-title>
             <h1>Редактирование статьи</h1>
+            &nbsp;&nbsp;<a v-if="form" :href="'/'+form.url_key+'.html'" target="_blank" style="text-decoration: none">к товару</a>
           </v-card-title>
           <v-card-text>
             <v-container>
@@ -81,7 +82,7 @@
         return _.pick(this.fields, ['id', 'title', 'minititle', 'short_title', 'url_key', 'content','article_type_id', 'active', 'orderform', 'mainpage', 'leftmenu'])
       },
       form() {
-        return _.pick(this.getItem(Number(this.id)), ['id','title', 'url_key', 'content','article_type_id', 'active', 'minititle', 'orderform', 'mainpage', 'leftmenu', 'short_title'])
+        return _.pick(this.getItem(Number(this.id)), ['id', 'title', 'minititle', 'short_title', 'url_key', 'content','article_type_id', 'active', 'orderform', 'mainpage', 'leftmenu'])
       }
     },
     components: {
