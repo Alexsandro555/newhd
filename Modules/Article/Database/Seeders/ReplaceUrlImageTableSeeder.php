@@ -19,7 +19,8 @@ class ReplaceUrlImageTableSeeder extends Seeder
 
         $articles = Article::get();
         $articles->each(function($article) {
-          $article->content = str_replace("http://www.hydronix.ru/", "./storage/", $article->content);
+          //$article->content = str_replace("http://www.hydronix.ru/", "./storage/", $article->content);
+          $article->content = str_replace("./storage/", "/storage/", $article->content);
           $article->save();
           return $article;
         });
