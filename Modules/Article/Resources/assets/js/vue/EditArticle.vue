@@ -79,7 +79,7 @@
       ...mapGetters('articles', {getItem: GLOBAL.GET_ITEM, getModel: 'getModel'}),
       plackFields()
       {
-        return _.pick(this.fields, ['id', 'title', 'minititle', 'short_title', 'url_key', 'content','article_type_id', 'active', 'orderform', 'mainpage', 'leftmenu'])
+        return _.pick(this.fields, ['id', 'title', 'minititle', 'short_title', 'url_key', 'content','article_type', 'active', 'orderform', 'mainpage', 'leftmenu'])
       },
       form() {
         return _.pick(this.getItem(Number(this.id)), ['id', 'title', 'minititle', 'short_title', 'url_key', 'content','article_type_id', 'active', 'orderform', 'mainpage', 'leftmenu'])
