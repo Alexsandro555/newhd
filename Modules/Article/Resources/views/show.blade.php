@@ -27,7 +27,7 @@
     <ul class="article__tab-action">
       @foreach($relatedArticles as $relatedArticle)
         <li>
-          <a href="{{$relatedArticle->url_key}}">
+          <a href="{{$relatedArticle->url_key.'.html'}}">
             @if(count($relatedArticle->files)>0)
               @foreach($relatedArticle->files[0]->config as $key=>$conf)
                 @foreach($conf as $key=>$item)
