@@ -13,16 +13,17 @@
                           :items="items"
                           :loading="loading"
                           :search="search"
-                          :rows-per-page-items="[10, 20, 50, { 'text': '$vuetify.dataIterator.rowsPerPageAll', 'value': -1 } ]"
+                          :rows-per-page-items="[50, 100 , { 'text': '$vuetify.dataIterator.rowsPerPageAll', 'value': -1 } ]"
                           rows-per-page-text="Строк на странице:"
                           class="elevation-1">
               <template slot="items" slot-scope="props">
                 <td>{{ props.item.id }}</td>
                 <td class="text-xs-left">{{ props.item.title }}</td>
                 <td class="text-xs-left">
-                  <v-icon v-if="props.item.active" color="pink">done</v-icon>
+                  <v-icon v-if="props.item.active" color="teal darken-3">done</v-icon>
                   <v-icon v-else color="pink">close</v-icon>
                 </td>
+                <td class="text-xs-left">{{ props.item.updated_at }}</td>
                 <td class="justify-center layout px-0">
                   <v-btn @click="goToPage(props.item.url_key)" icon class="mx-0">
                     <v-icon>find_in_page</v-icon>
@@ -86,6 +87,11 @@
           {
             text: 'Активный',
             value: 'active',
+            sortable: true
+          },
+          {
+            text: 'Обновлено',
+            value: 'updated_at',
             sortable: true
           },
           {
