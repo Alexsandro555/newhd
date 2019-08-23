@@ -6,7 +6,7 @@
           <img :src="'/storage/'+slide.files[0].config.files.main.filename" style='float:right'/><br/>
         </div>
         <span class='title'>
-          <a :href="slide.url_key" style='font-size:inherit'>{{slide.title}}</a>
+          <a :href="slide.url_key+'.html'" style='font-size:inherit'>{{slide.title}}</a>
           <img src='images/header_message_bg.png' style="position:absolute;bottom:-15px;right:0px"/>
         </span><br/>
         <span class="message">{{slide.description}}</span>

@@ -25,4 +25,9 @@ class ArticleController extends Controller
     }])->where('article_type_id', $article->article_type_id)->where('active',1)->get();
     return view('article::show', compact('article', 'relatedArticles'));
   }
+
+  public function faq()
+  {
+    return abort();
+  }
 }
