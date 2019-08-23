@@ -12,7 +12,7 @@
               <v-layout row wrap>
                 <v-flex>
                   <v-form ref="form" lazy-validation v-model="valid">
-                    <template v-for="(field, num) in fields">
+                    <template v-for="(field, num) in plackFields">
                       <form-builder :field="field" v-if="num!=='content'" :num="num" :relations="relations" :items="form" @update="updateField"></form-builder>
                     </template>
                     <v-flex xs12>
@@ -76,8 +76,12 @@
     computed: {
       ...mapState('articles', ['items', 'fields', 'relations', 'typeFiles']),
       ...mapGetters('articles', {getItem: GLOBAL.GET_ITEM, getModel: 'getModel'}),
+      plackFields()
+      {
+        return _.pick(this.fields, ['id', 'title', 'minititle', 'short_title', 'url_key', 'content','article_type_id', 'active', 'orderform', 'mainpage', 'leftmenu'])
+      },
       form() {
-        return _.pick(this.getItem(Number(this.id)), ['id','title','content','article_type_id', 'active', 'minititle', 'orderform', 'mainpage', 'leftmenu', 'short_title'])
+        return _.pick(this.getItem(Number(this.id)), ['id','title', 'url_key', 'content','article_type_id', 'active', 'minititle', 'orderform', 'mainpage', 'leftmenu', 'short_title'])
       }
     },
     components: {

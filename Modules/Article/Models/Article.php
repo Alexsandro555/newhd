@@ -18,41 +18,59 @@ class Article extends Model
 
   public $form = [
     'id' => [
-      'enabled' => true
+      'enabled' => true,
+      'sort' => 1
     ],
     'title' => [
       'enabled' => true,
       'validations' => [
         'required' => true,
         'max' => 255
-      ]
+      ],
+      'sort' => 2
     ],
     'short_title' => [
       'enabled' => true,
       'validations' => [
         'max' => 255
-      ]
-    ],
-    'content' => [
-      'enabled' => true
-    ],
-    'orderform' => [
-      'enabled' => true
-    ],
-    'mainpage' => [
-      'enabled' => true
-    ],
-    'leftmenu' => [
-      'enabled' => true
+      ],
+      'sort' => 3
     ],
     'minititle' => [
-      'enabled' => true
+      'enabled' => true,
+      'sort' => 4
+    ],
+    'url_key' => [
+      'enabled' => true,
+      'validations' => [
+        'required' => true,
+        'max' => 255
+      ],
+      'sort' => 5
+    ],
+    'content' => [
+      'enabled' => true,
+      'sort' => 6
+    ],
+    'orderform' => [
+      'enabled' => true,
+      'sort' => 7
+    ],
+    'mainpage' => [
+      'enabled' => true,
+      'sort' => 8
+    ],
+    'leftmenu' => [
+      'enabled' => true,
+      'sort' => 9
     ],
     'active' => [
-      'enabled' => true
+      'enabled' => true,
+      'sort' => 10
     ],
     'article_type' => [
       'enabled' => true,
+      'sort' => 11
     ]
   ];
 
