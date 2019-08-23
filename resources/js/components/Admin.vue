@@ -54,15 +54,15 @@
         drawer: null,
         items: [
           {divider: true},
-          {heading: 'Управление продуктами'},
+          /*{heading: 'Управление продуктами'},
           {
             text: 'Категории продуктов',
             path: '/categories'
           },
-          /*{
+          {
             text: 'ТНВЭД',
             path: '/tnved'
-          },*/
+          },
           {
             text: 'Типы продуктов',
             path: '/types'
@@ -95,7 +95,7 @@
             text: 'Продукция',
             path: '/'
           },
-          {divider: true},
+          {divider: true},*/
           {heading: 'Работа с сайтом'},
           {
             text: 'Статьи',
@@ -105,26 +105,26 @@
             text: 'Типы статей',
             path: '/article-types'
           },
-          {
+          /*{
             text: 'Новости',
             path: '/news'
           },
           {
             text: 'Страницы',
             path: '/pages'
-          },
+          },*/
           {
             text: 'Обратные звонки',
             path: '/callbacks'
           },
-          {
+          /*{
             text: 'Загрузка атрибутов',
             path: '/attributes/loading'
           },
           {
             text: 'Ипорт продукции',
             path: '/import'
-          },
+          },*/
           {
             text: 'Изображения',
             path: '/images'
