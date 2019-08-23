@@ -12,14 +12,16 @@
   color: white;
 }
 
-div[name="main"] {
-  font-size: 11pt;
+.hydronix-content {
   padding-left: 10px;
+}
+
+/*div[name="main"] {
 }
 
 div[name="main"]>p {
   font-size: 11pt;
-}
+}*/
 
 .tbl-title {
   max-width: 400px;

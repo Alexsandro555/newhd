@@ -33,7 +33,9 @@
             {{$article->title}}
         </span>
   </h1>
-  {!! $article->content !!}
+  <div class="hydronix-content">
+    {!! $article->content !!}
+  </div>
   <br>
   @if($article->orderform)
     @include('article::orderform')
