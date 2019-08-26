@@ -60,7 +60,7 @@
             <v-container>
               <v-layout row wrap>
                 @foreach($articleType->articles as $article)
-                  <v-flex xs{{$article->flex_point*3}} class="articles-category__item">
+                  <v-flex xs{{$article->flex_point}} class="articles-category__item">
                     <div class="articles-category__image">
                       @foreach($article->files as $file)
                         @foreach($file->config as $key=>$conf)
