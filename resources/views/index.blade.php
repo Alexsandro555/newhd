@@ -52,35 +52,36 @@
 @endsection
 
 @section('content')
-  @foreach($articleTypes as $articleType)
-    <div class="cont">
-      <h1><span>{{$articleType->title}}</span></h1>
-      <div class="new-sting"></div>
-      <div class="articles-category-wrapper">
-        <div class="articles-category">
-          @foreach($articleType->articles as $article)
-            <div class="articles-category__item">
-              <div class="articles-category__image">
-                @foreach($article->files as $file)
-                  @foreach($file->config as $key=>$conf)
-                    @foreach($conf as $key=>$item)
-                      @if($key === "main")
-                        <img src="/storage/{{$item['filename']}}"/>
-                      @endif
+  <div id="app">
+    @foreach($articleTypes as $articleType)
+      <div>
+        <h1><span>{{$articleType->title}}</span></h1>
+        <v-container>
+          <v-layout row wrap>
+            @foreach($articleType->articles as $article)
+              <v-flex xs{{$article->flex_point*3}} class="articles-category__item">
+                <div class="articles-category__image">
+                  @foreach($article->files as $file)
+                    @foreach($file->config as $key=>$conf)
+                      @foreach($conf as $key=>$item)
+                        @if($key === "main")
+                          <img src="/storage/{{$item['filename']}}"/>
+                        @endif
+                      @endforeach
                     @endforeach
+                    @break
                   @endforeach
-                  @break
-                @endforeach
-              </div>
-              <div class="articles-category__link">
-                <a href='{{$article->url_key}}.html'><strong>{{$article->minititle}}</strong><div class="new-string"></div>{{$article->short_title?$article->short_title:$article->title}}</a>
-              </div>
-            </div>
-          @endforeach
-        </div>
+                </div>
+                <div class="articles-category__link">
+                  <a href='{{$article->url_key}}.html'><strong>{{$article->minititle}}</strong><div class="new-string"></div>{{$article->short_title?$article->short_title:$article->title}}</a>
+                </div>
+              </v-flex>
+            @endforeach
+          </v-layout>
+        </v-container>
       </div>
-    </div>
-  @endforeach
+    @endforeach
+  </div>
   <br />
   <h1><span>О Компании</span></h1><br />
   <p style='text-align:justify'>Компания Hydronix LTD (Великобритания) специализируется на исследовании, разработки и производстве систем микроволнового измерения влажности. Мы разработали механизм, который стал основным в измерении влажности в бетонной индустрии. Наши датчики уже установлены в около 50000 системах по всему миру. Начиная с 1982 года Hydronix продолжает оставаться мировым лидером в этом секторе рынка.</p>

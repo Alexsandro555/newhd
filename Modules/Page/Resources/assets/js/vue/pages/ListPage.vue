@@ -19,6 +19,10 @@
                             <template slot="items" slot-scope="props">
                                 <td class="text-xs-left">{{ props.item.id }}</td>
                                 <td class="text-xs-left">{{ props.item.title }}</td>
+                                <td class="text-xs-left">
+                                    <v-icon v-if="props.item.active" color="teal darken-3">done</v-icon>
+                                    <v-icon v-else color="pink">close</v-icon>
+                                </td>
                                 <td class="justify-center layout px-0">
                                     <v-btn icon class="mx-0" @click="$router.push('/pages/edit/'+props.item.id)">
                                         <v-icon color="teal">edit</v-icon>
@@ -72,6 +76,11 @@
                     {
                         text: 'Наименование',
                         value: 'title',
+                        sortable: true
+                    },
+                    {
+                        text: 'Активный',
+                        value: 'active',
                         sortable: true
                     },
                     {

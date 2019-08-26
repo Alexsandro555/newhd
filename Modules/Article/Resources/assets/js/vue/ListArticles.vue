@@ -31,8 +31,7 @@
                   <v-btn icon class="mx-0" @click="$router.push({name: 'edit-articles', params: {id: props.item.id.toString()}})">
                     <v-icon color="teal">edit</v-icon>
                   </v-btn>
-                  <v-btn :disabled="props.item.url_key === 'po-umolchaniyu'" icon class="mx-0"
-                         @click="deleteItem(props.item)">
+                  <v-btn :disabled="props.item.url_key === 'po-umolchaniyu'" icon class="mx-0" @click="deleteItem(props.item)">
                     <v-icon color="pink">delete</v-icon>
                   </v-btn>
                 </td>

@@ -20,7 +20,8 @@ class PagesController extends Controller
       $this->model=new Page;
   }
 
-  public function show($slug) {
+  public function show($slug)
+  {
     $page = Page::where('url_key', $slug)->firstOrFail();
     return view('page::show', compact('page'));
   }

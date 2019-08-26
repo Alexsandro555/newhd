@@ -8,7 +8,6 @@
   <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>HYDRONIX. @yield('title')</title>
-
   <!-- Fonts -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
@@ -63,7 +62,7 @@
       <table cellpadding="0" cellspacing="0" with=100%>
         <tbody valign="top">
         <tr>
-          <td width=312>
+          <td width=330>
             @yield('sidebar')
           </td>
           <td>
