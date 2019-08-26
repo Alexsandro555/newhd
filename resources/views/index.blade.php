@@ -55,6 +55,7 @@
   @foreach($articleTypes as $articleType)
     <div class="cont">
       <h1><span>{{$articleType->title}}</span></h1>
+      <div class="new-sting"></div>
       <div class="articles-category">
         @foreach($articleType->articles as $article)
           <div class="articles-category__item">
