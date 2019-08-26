@@ -15,5 +15,5 @@ Route::get('/', ['uses' => 'SiteController@index', 'as' => 'main']);
 Route::get('/slides', 'SiteController@slides');
 Route::get('/admin', ['uses' => '\Modules\Auth\Http\Controllers\AdminController@index', 'as' => 'master']);
 Route::get('/faq.php', '\Modules\Page\Http\Controllers\PagesController@faq');
-Route::get('/contracts.html', '\Modules\Page\Http\Controllers\PagesController@contracts');
+Route::get('/contacts.html', '\Modules\Page\Http\Controllers\PagesController@contracts');
 Route::get('/{slug}.html', '\Modules\Article\Http\Controllers\ArticleController@show');

@@ -28,7 +28,7 @@ class PagesController extends Controller
 
   public function contracts()
   {
-    return view('page::show')->with('page', Page::where('url_key', 'contracts')->firstOrFail());
+    return view('page::show')->with('page', Page::where('url_key', 'contacts')->firstOrFail());
   }
 
   public function faq()
