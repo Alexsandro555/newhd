@@ -2,28 +2,21 @@
 
 @section('title', $page->title)
 
-@section('menu')
-  <div class="menu-wrapper wrapper">
-    <div class="abs-position">
-      <left-menu></left-menu>
-    </div>
-  </div>
+@section('sidebar')
+
 @endsection
 
 @section('content')
-  <div class="articles">
-    <div class="wrapper top20">
-      <v-layout row wrap>
-        <v-flex xs12 class="text-xs-left margit-top-140">
-          <p class="about__head text-md-left">
-            <span>{{$page->title}}</span>
-          </p>
-          <div class="article__content">
-            {!! $page->content !!}
-          </div>
-        </v-flex>
-      </v-layout>
-    </div>
+  <div class="path">
+    <a href="/">Главная</a>&nbsp;&nbsp;<img src="{{asset('images/arrow.png')}}"/>&nbsp;&nbsp;{{$page->title}}
   </div>
+  <h1><span>{{$article->title}}</span></h1><br>
+  <div class="hydronix-content">
+    {!! $article->content !!}
+  </div>
+  <br>
+  @if($article->orderform)
+    @include('article::orderform')
+  @endif
 @endsection
 

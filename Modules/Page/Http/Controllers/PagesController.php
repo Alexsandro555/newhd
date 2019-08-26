@@ -25,4 +25,14 @@ class PagesController extends Controller
     $page = Page::where('url_key', $slug)->firstOrFail();
     return view('page::show', compact('page'));
   }
+
+  public function contracts()
+  {
+    return view('page::show')->with('page', Page::where('url_key', 'contracts')->firstOrFail());
+  }
+
+  public function faq()
+  {
+    return view('page::show')->with('page',  Page::where('url_key', 'faq')->firstOrFail());
+  }
 }
