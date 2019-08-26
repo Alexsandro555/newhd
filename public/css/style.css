@@ -378,6 +378,7 @@ div[name="main"]>p {
   padding: 2px;
   border: 1px solid #d1d1d0;
   background-color: #ffff;
+  margin: 10px 0px;
 }
 
 .new-string {
