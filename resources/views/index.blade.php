@@ -53,32 +53,30 @@
 
 @section('content')
   @foreach($articleTypes as $articleType)
-    <br>
-    <h1><span>{{$articleType->title}}</span></h1>
-    <br/>
-    <div class="container">
-      <div>
-        <div class="articles-category">
-          @foreach($articleType->articles as $article)
-            <div class="articles-category__item">
-              <div class="articles-category__image">
-                @foreach($article->files as $file)
-                  @foreach($file->config as $key=>$conf)
-                    @foreach($conf as $key=>$item)
-                      @if($key === "main")
-                        <img src="/storage/{{$item['filename']}}"/>
-                      @endif
-                    @endforeach
+    <div class="cont">
+      <h1><span>{{$articleType->title}}</span></h1>
+      <div class="new-string"></div>
+
+      <div class="articles-category">
+        @foreach($articleType->articles as $article)
+          <div class="articles-category__item">
+            <div class="articles-category__image">
+              @foreach($article->files as $file)
+                @foreach($file->config as $key=>$conf)
+                  @foreach($conf as $key=>$item)
+                    @if($key === "main")
+                      <img src="/storage/{{$item['filename']}}"/>
+                    @endif
                   @endforeach
-                  @break
                 @endforeach
-              </div>
-              <div class="articles-category__link">
-                <a href='{{$article->url_key}}.html'><strong>{{$article->minititle}}</strong><br>{{$article->short_title?$article->short_title:$article->title}}</a>
-              </div>
+                @break
+              @endforeach
             </div>
-          @endforeach
-        </div>
+            <div class="articles-category__link">
+              <a href='{{$article->url_key}}.html'><strong>{{$article->minititle}}</strong><div class="new-string"></div>{{$article->short_title?$article->short_title:$article->title}}</a>
+            </div>
+          </div>
+        @endforeach
       </div>
     </div>
   @endforeach
