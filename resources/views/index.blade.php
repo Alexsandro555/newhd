@@ -56,26 +56,28 @@
     <div class="cont">
       <h1><span>{{$articleType->title}}</span></h1>
       <div class="new-sting"></div>
-      <div class="articles-category">
-        @foreach($articleType->articles as $article)
-          <div class="articles-category__item">
-            <div class="articles-category__image">
-              @foreach($article->files as $file)
-                @foreach($file->config as $key=>$conf)
-                  @foreach($conf as $key=>$item)
-                    @if($key === "main")
-                      <img src="/storage/{{$item['filename']}}"/>
-                    @endif
+      <div class="articles-category-wrapper">
+        <div class="articles-category">
+          @foreach($articleType->articles as $article)
+            <div class="articles-category__item">
+              <div class="articles-category__image">
+                @foreach($article->files as $file)
+                  @foreach($file->config as $key=>$conf)
+                    @foreach($conf as $key=>$item)
+                      @if($key === "main")
+                        <img src="/storage/{{$item['filename']}}"/>
+                      @endif
+                    @endforeach
                   @endforeach
+                  @break
                 @endforeach
-                @break
-              @endforeach
+              </div>
+              <div class="articles-category__link">
+                <a href='{{$article->url_key}}.html'><strong>{{$article->minititle}}</strong><div class="new-string"></div>{{$article->short_title?$article->short_title:$article->title}}</a>
+              </div>
             </div>
-            <div class="articles-category__link">
-              <a href='{{$article->url_key}}.html'><strong>{{$article->minititle}}</strong><div class="new-string"></div>{{$article->short_title?$article->short_title:$article->title}}</a>
-            </div>
-          </div>
-        @endforeach
+          @endforeach
+        </div>
       </div>
     </div>
   @endforeach
