@@ -55,7 +55,7 @@
   <div id="app">
       <v-layout row wrap>
         @foreach($articleTypes as $articleType)
-          <div>
+          <v-flex xs{{$articleType->flex_point}}>
             <h1><span>{{$articleType->title}}</span></h1>
             <v-container>
               <v-layout row wrap>
@@ -80,7 +80,7 @@
                 @endforeach
               </v-layout>
             </v-container>
-          </div>
+          </v-flex>
         @endforeach
       </v-layout>
   </div>
