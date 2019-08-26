@@ -394,6 +394,11 @@ div[name="main"]>p {
   border: none !important;
 }
 
+.articles-category__item:last-child {
+  background: none;
+  background-color: #ecebeb;
+}
+
 .articles-category__image {
   width: 100%;
   height: 200px;
@@ -411,6 +416,7 @@ div[name="main"]>p {
 .articles-category__link {
   display: block;
   text-align: center;
+  padding: 0px 16px;
 }
 
 .articles-category__link a {

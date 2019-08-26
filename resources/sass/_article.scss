@@ -25,6 +25,11 @@
   border: none !important;
 }
 
+.articles-category__item:last-child {
+  background: none;
+  background-color: #ecebeb;
+}
+
 .articles-category__image {
   //display: inline-block;
   width:100%;
@@ -43,6 +48,7 @@
 .articles-category__link {
   display: block;
   text-align: center;
+  padding: 0px 16px;
 }
 
 .articles-category__link a {
