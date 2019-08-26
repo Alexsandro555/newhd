@@ -392,6 +392,10 @@ div[name="main"]>p {
   width: 100%;
 }
 
+.margin-10 {
+  margin: 0 10px;
+}
+
 .articles-category__item {
   height: 280px;
   vertical-align: top;

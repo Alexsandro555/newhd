@@ -56,7 +56,7 @@
       <v-layout row wrap>
         @foreach($articleTypes as $articleType)
           <v-flex xs{{$articleType->flex_point}}>
-            <h1><span>{{$articleType->title}}</span></h1>
+            <h1 class="margin-10"><span>{{$articleType->title}}</span></h1>
             <v-container>
               <v-layout row wrap>
                 @foreach($articleType->articles as $article)
