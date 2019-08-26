@@ -366,6 +366,7 @@ div[name="main"]>p {
 
 .cont {
   display: inline-block;
+  max-width: 870px;
 }
 
 .articles-category {
@@ -374,7 +375,7 @@ div[name="main"]>p {
   display: inline-flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 3px;
+  padding: 2px;
   border: 1px solid #d1d1d0;
   background-color: #ffff;
 }
@@ -384,7 +385,7 @@ div[name="main"]>p {
 }
 
 .articles-category__item {
-  width: 210px;
+  width: 213px;
   height: 280px;
   vertical-align: top;
   background: url("/images/header_sep.png") no-repeat right center;
