@@ -3,6 +3,31 @@
 @section('title', $page->title)
 
 @section('sidebar')
+  @foreach($articleTypes as $articleType)
+      <h1><span>{{$articleType->title}}</span></h1>
+        <div class="information">
+          <ul class="article__tab-action">
+            @foreach($articleType->articles as $article)
+            <li>
+              <a href="{{$article->url_key.'.html'}}">
+                @if(count($article->files)>0)
+                  @foreach($article->files[0]->config as $key=>$conf)
+                    @foreach($conf as $key=>$item)
+                      @if($key == "extrasmall")
+                        <img src="/storage/{{$item['filename']}}" class="fleft"/>
+                      @endif
+                    @endforeach
+                  @endforeach
+                @endif
+                {{$article->short_title?$article->short_title:$article->title}}
+              </a>
+            </li>
+            @endforeach
+          </ul>
+        </div>
+  @endforeach
+
+
   <h1><span>Области применения</span></h1>
   <div class="information">
     <ul class="article__tab-action">

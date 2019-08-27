@@ -31,10 +31,15 @@ class PagesController extends Controller
 
   public function contracts()
   {
-    //$vlagas = Article::where('article_type_id',ArticleType::where('title', 'Микроволновые датчики (влагомеры)')->firstOrFails()->id)->where('leftmenu',1)->get();
-    //$interfs = Article::where('article_type_id',ArticleType::where('title', 'Температура')->andWhere('title','Интерфейсные модули')->firstOrFails()->id)->where('leftmenu',1)->get();
+    $articleTypes = ArticleType::whereHas('articles',function($query) {
+      $query->where('leftmenu',1)->where('active',1);
+    })->with(['articles' => function($query) {
+      $query->with(['files' => function($query) {
+        $query->where('type_file_id', TypeFile::where('name', 'image-article')->firstOrFail()->id);
+      }])->where('leftmenu',1)->where('active',1)->orderBy('sort', 'asc');
+    }])->where('active',1)->get();
     $otherArticles = OtherArticle::where('leftmenu',1)->get();
-    return view('page::show')->with('page', Page::where('url_key', 'contacts')->firstOrFail())->with('otherArticles',$otherArticles);
+    return view('page::show')->with('page', Page::where('url_key', 'contacts')->firstOrFail())->with('otherArticles',$otherArticles)->with('articleTypes', $articleTypes);
   }
 
   public function faq()
