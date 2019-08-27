@@ -34,7 +34,7 @@ class PagesController extends Controller
     $vlagas = Article::where('article_type_id',ArticleType::where('title', 'Микроволновые датчики (влагомеры)')->firstOrFails()->id)->where('leftmenu',1)->get();
     $interfs = Article::where('article_type_id',ArticleType::where('title', 'Температура')->andWhere('title','Интерфейсные модули')->firstOrFails()->id)->where('leftmenu',1)->get();
     $otherArticles = OtherArticle::where('leftmenu',1)->get();
-    return view('page::show')->with('page', Page::where('url_key', 'contacts')->firstOrFail());
+    return view('page::show')->with('page', Page::where('url_key', 'contacts')->firstOrFail())->with('vlagas', $vlagas)->with('interfs',$interfs)->with('otherArticles',$otherArticles);
   }
 
   public function faq()
