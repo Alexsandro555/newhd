@@ -100,7 +100,7 @@
       init(id) {
         this.resetError();
         if (this.items.length == 0) {
-          this.$router.push({name: 'other-article'})
+          this.$router.push({name: 'other-articles'})
         }
       },
       onSubmit() {
@@ -108,7 +108,7 @@
           this.isSending = true
           this.save(this.form).then(response => {
             this.isSending = false
-            this.$router.push({name: 'other-article'})
+            this.$router.push({name: 'other-articles'})
           })
         }
       }
