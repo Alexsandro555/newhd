@@ -11,6 +11,7 @@ use Modules\Page\Models\Page;
 use Illuminate\Routing\Controller;
 use Modules\Initializer\Traits\ControllerTrait;
 use Modules\Initializer\Traits\DefaultTrait;
+use Modules\Files\Entities\TypeFile;
 
 class PagesController extends Controller
 {
