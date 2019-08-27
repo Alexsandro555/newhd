@@ -17,7 +17,7 @@ class CallbackController extends Controller
    * @param  Request $request
    * @return Response
    */
-  public function store(CallbackRequest $request)
+  public function store(Request $request)
   {
     $model = Callback::create([
       'name' => $request->fio,

@@ -4,6 +4,7 @@
     <tr valign="middle">
       <th colspan="2">
         <h1><span>Форма запроса на оборудование</span></h1><br>
+        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
       </th>
     </tr>
     <tr valign="middle">
@@ -59,3 +60,4 @@
     </tbody>
   </table>
 </form>
+<br><br>

@@ -17,6 +17,8 @@ use Carbon\Carbon;
 use Modules\Slide\Entities\Slide;
 use Modules\Files\Entities\TypeFile;
 use Modules\Article\Models\OtherArticle;
+use Modules\Callback\Models\Callback;
+use Illuminate\Support\Facades\Mail;
 
 class SiteController extends Controller
 {
@@ -133,5 +135,18 @@ class SiteController extends Controller
       $slide->description = strip_tags($slide->description);
       return $slide;
     });
+  }
+
+  public function callback(Request $request)
+  {
+    $model = Callback::create([
+      'name' => $request->fio,
+      'company_name' => $request->company,
+      'telephone' => $request->tel,
+      'email' => $request->email,
+      'comment' => $request->description
+    ]);
+    Mail::to("xanmaster08@rambler.ru")->send(new CallbackShipped($model));
+    return view('callback::sucessfull');
   }
 }
