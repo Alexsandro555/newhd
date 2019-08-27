@@ -41,14 +41,19 @@ class PagesController extends Controller
     }])->where('active',1)->get();
   }
 
+  public function otherArticles()
+  {
+    return $otherArticles = OtherArticle::where('leftmenu',1)->get();
+  }
+
   public function contracts()
   {
-    $otherArticles = OtherArticle::where('leftmenu',1)->get();
-    return view('page::show')->with('page', Page::where('url_key', 'contacts')->firstOrFail())->with('otherArticles',$otherArticles)->with('articleTypes', $this->articleTypes());
+
+    return view('page::show')->with('page', Page::where('url_key', 'contacts')->firstOrFail())->with('otherArticles',$this->otherArticles())->with('articleTypes', $this->articleTypes());
   }
 
   public function faq()
   {
-    return view('page::show')->with('page',  Page::where('url_key', 'faq')->firstOrFail())->with('articleTypes', $this->articleTypes());
+    return view('page::show')->with('page',  Page::where('url_key', 'faq')->firstOrFail())->with('articleTypes', $this->articleTypes())->with('otherArticles', $this->otherArticles());
   }
 }
