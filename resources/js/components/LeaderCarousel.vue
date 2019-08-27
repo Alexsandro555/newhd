@@ -10,6 +10,7 @@
           <img src='images/header_message_bg.png' style="position:absolute;bottom:-15px;right:0px"/>
         </span><br/>
         <span class="message">{{slide.description}}</span>
+        <img src="/images/bg_center_message.png" style="position: absolute; z-index: -1; left: 0px; top: 220px;">
       </slide>
     </carousel>
   </div>
