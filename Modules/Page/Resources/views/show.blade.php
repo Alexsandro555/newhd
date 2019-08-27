@@ -6,11 +6,11 @@
   <h1><span>Области применения</span></h1>
   <div class="information">
     <ul class="article__tab-action">
-      @foreach($interfs as $interf)
+      @foreach($otherArticles as $otherArticle)
         <li>
-          <a href="{{$interf->url_key.'.html'}}">
-            @if(count($interf->files)>0)
-              @foreach($interf->files[0]->config as $key=>$conf)
+          <a href="{{$otherArticle->url_key.'.html'}}">
+            @if(count($otherArticle->files)>0)
+              @foreach($otherArticle->files[0]->config as $key=>$conf)
                 @foreach($conf as $key=>$item)
                   @if($key == "extrasmall")
                     <img src="/storage/{{$item['filename']}}" class="fleft"/>
@@ -18,7 +18,7 @@
                 @endforeach
               @endforeach
             @endif
-            {{$interf->short_title?$interf->short_title:$interf->title}}
+            {{$otherArticle->short_title?$otherArticle->short_title:$otherArticle->title}}
           </a>
         </li>
       @endforeach
