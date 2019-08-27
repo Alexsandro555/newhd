@@ -29,3 +29,13 @@ Route::middleware('auth:api')->prefix('article_types')->group(function() {
   Route::delete('/', 'ArticleTypeController@delete');
   Route::patch('/', 'ArticleTypeController@save');
 });
+
+
+
+Route::middleware('auth:api')->prefix('other-articles')->group(function() {
+  Route::get('/', 'OtherArticlesController@index');
+  Route::post('/', 'OtherArticlesController@load');
+  Route::post('/default', 'OtherArticlesController@create');
+  Route::delete('/', 'OtherArticlesController@delete');
+  Route::patch('/', 'OtherArticlesController@save');
+});

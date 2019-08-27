@@ -33,6 +33,8 @@ import ProductImport from '@product/vue/Product/ProductImport'
 import Images from '@file/vue/Images'
 import EditImages from '@file/vue/EditImages'
 import TypeFile from '@file/vue/TypeFile'
+import ListOtherArticles from '@article/vue/OtherArticle/ListOtherArticles'
+import EditOtherArticle from '@article/vue/OtherArticle/EditOtherArticle'
 //const EditProducer = () => import('@product/vue/Producer/EditProducer')
 import ListArticleType from '@article/vue/ArticleType/ListArticleType'
 import EditArticleType from '@article/vue/ArticleType/EditArticleType'
@@ -205,6 +207,17 @@ export const routes = [
         path: '/article-type/edit/:id',
         name: 'edit-article-type',
         component: EditArticleType,
+        props: true
+      },
+      {
+        path: '/other-articles',
+        name: 'other-articles',
+        component: ListOtherArticles
+      },
+      {
+        path: '/other-articles/edit/:id',
+        name: 'edit-other-article',
+        component: EditOtherArticle,
         props: true
       },
       {

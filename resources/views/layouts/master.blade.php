@@ -62,7 +62,7 @@
       <table cellpadding="0" cellspacing="0" with=100%>
         <tbody valign="top">
         <tr>
-          <td width=312>
+          <td width=350>
             @yield('sidebar')
           </td>
           <td>

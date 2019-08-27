@@ -16,7 +16,7 @@ const state = {
   fields: [],
   loading: true,
 	typeFiles: ['image-article'],
-	relations: [{column:'article_type_id',module:'article_types'}]
+	model: 'Modules\\Article\\Entities\\OtherArticle'
 }
 
 const module = {

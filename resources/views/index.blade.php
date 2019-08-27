@@ -52,7 +52,9 @@
 @endsection
 
 @section('content')
-  <div id="app">
+  <div id="app" v-cloak>
+    <span class="v-cloak--block"></span>
+    <v-app class="v-cloak--hidden leader">
       <v-layout row wrap>
         @foreach($articleTypes as $articleType)
           <v-flex xs{{$articleType->flex_point}}>
@@ -83,6 +85,7 @@
           </v-flex>
         @endforeach
       </v-layout>
+    </v-app>
   </div>
   <br />
   <h1><span>О Компании</span></h1><br />

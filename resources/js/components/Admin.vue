@@ -102,6 +102,10 @@
             path: '/articles'
           },
           {
+            text: 'Области применения',
+            path: '/other-articles'
+          },
+          {
             text: 'Типы статей',
             path: '/article-types'
           },
