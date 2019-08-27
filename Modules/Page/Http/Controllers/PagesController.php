@@ -30,21 +30,25 @@ class PagesController extends Controller
     return view('page::show', compact('page'));
   }
 
-  public function contracts()
+  public function articleTypes()
   {
-    $articleTypes = ArticleType::whereHas('articles',function($query) {
+    return $articleTypes = ArticleType::whereHas('articles',function($query) {
       $query->where('leftmenu',1)->where('active',1);
     })->with(['articles' => function($query) {
       $query->with(['files' => function($query) {
         $query->where('type_file_id', TypeFile::where('name', 'image-article')->firstOrFail()->id);
       }])->where('leftmenu',1)->where('active',1)->orderBy('sort', 'asc');
     }])->where('active',1)->get();
+  }
+
+  public function contracts()
+  {
     $otherArticles = OtherArticle::where('leftmenu',1)->get();
-    return view('page::show')->with('page', Page::where('url_key', 'contacts')->firstOrFail())->with('otherArticles',$otherArticles)->with('articleTypes', $articleTypes);
+    return view('page::show')->with('page', Page::where('url_key', 'contacts')->firstOrFail())->with('otherArticles',$otherArticles)->with('articleTypes', $this->articleTypes());
   }
 
   public function faq()
   {
-    return view('page::show')->with('page',  Page::where('url_key', 'faq')->firstOrFail());
+    return view('page::show')->with('page',  Page::where('url_key', 'faq')->firstOrFail())->with('articleTypes', $this->articleTypes());
   }
 }
