@@ -2,6 +2,10 @@
 
 @section('title', "HYDRONIX.RU. Микроволновые датчики влажности (влагомеры) для бетона, сыпучих материалов, комбикормов, угольной пыли. Датчик/измеритель контроля влажности")
 
+@section('view.style')
+  <link rel="stylesheet" type="text/css" href="{{asset('css/vuetify.min.css')}}">
+@endsection
+
 @section('slider')
   <leader-carousel></leader-carousel>
 @endsection
