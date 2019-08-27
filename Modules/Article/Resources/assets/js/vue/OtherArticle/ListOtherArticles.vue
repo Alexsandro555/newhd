@@ -119,7 +119,7 @@
       ...mapActions('other_articles', { add: GLOBAL.ADD, delete: GLOBAL.DELETE, load: GLOBAL.LOAD, loadAll: GLOBAL.LOAD_ALL, initialization: GLOBAL.INITIALIZATION, loadRelations: GLOBAL.LOAD_RELATIONS }),
       addArticle() {
         this.add({'title': 'По-умолчанию'}).then(response => {
-          this.$router.push({name: 'edit-other-articles', params: {id: response.id.toString()}})
+          this.$router.push({name: 'edit-other-article', params: {id: response.id.toString()}})
         })
       },
       deleteItem(item) {
