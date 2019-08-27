@@ -16,18 +16,23 @@ use Illuminate\Support\Facades\Cache;
 use Carbon\Carbon;
 use Modules\Slide\Entities\Slide;
 use Modules\Files\Entities\TypeFile;
+use Modules\Article\Models\OtherArticle;
 
 class SiteController extends Controller
 {
   public function index()
   {
-    return view('index')->with('articleTypes', ArticleType::whereHas('articles',function($query) {
+    $articleTypes = ArticleType::whereHas('articles',function($query) {
       $query->where('mainpage',1)->where('active',1);
     })->with(['articles' => function($query) {
       $query->with(['files' => function($query) {
         $query->where('type_file_id', TypeFile::where('name', 'image-article')->first()->id);
       }])->where('mainpage',1)->where('active',1)->orderBy('sort', 'asc');
-    }])->where('active',1)->get());
+    }])->where('active',1)->get();
+    $otherArticles = OtherArticle::with(['files' => function($query) {
+        $query->where('type_file_id', TypeFile::where('name', 'image-article')->first()->id);
+    }])->where('mainpage',1)->where('active',1)->orderBy('sort', 'asc')->get();
+    return view('index')->with('articleTypes', $articleTypes)->with('otherArticles', $otherArticles);
   }
 
   public function catalog($slug)

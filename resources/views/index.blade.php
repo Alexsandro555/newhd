@@ -84,6 +84,34 @@
             </v-container>
           </v-flex>
         @endforeach
+        @if($otherArticles->count() > 0 )
+            <v-flex xs12>
+              <h1 class="margin-10"><span>Области применения</span></h1>
+              <v-container>
+                <v-layout row wrap>
+                  @foreach($otherArticles as $otherArticle)
+                    <v-flex xs{{$otherArticle->flex_point}} class="articles-category__item">
+                      <div class="articles-category__image">
+                        @foreach($otherArticle->files as $file)
+                          @foreach($file->config as $key=>$conf)
+                            @foreach($conf as $key=>$item)
+                              @if($key === "main")
+                                <img src="/storage/{{$item['filename']}}"/>
+                              @endif
+                            @endforeach
+                          @endforeach
+                          @break
+                        @endforeach
+                      </div>
+                      <div class="articles-category__link">
+                        <a href='{{$otherArticle->url_key}}.html'><strong>{{$otherArticle->minititle}}</strong><div class="new-string"></div>{{$otherArticle->short_title?$otherArticle->short_title:$otherArticle->title}}</a>
+                      </div>
+                    </v-flex>
+                  @endforeach
+                </v-layout>
+              </v-container>
+            </v-flex>
+        @endif
       </v-layout>
     </v-app>
   </div>
