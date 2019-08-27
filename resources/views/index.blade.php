@@ -52,7 +52,7 @@
 @endsection
 
 @section('content')
-  <div id="app" v-cloak>
+  <div v-cloak>
     <span class="v-cloak--block"></span>
     <v-app class="v-cloak--hidden leader">
       <v-layout row wrap>

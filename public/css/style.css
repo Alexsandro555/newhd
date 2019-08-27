@@ -459,9 +459,9 @@ div[name="main"]>p {
   max-width: 200px;
 }
 
-br {
+/*br {
   content: '\A';
   display: contents;
   white-space: pre;
-}
+}*/
 
