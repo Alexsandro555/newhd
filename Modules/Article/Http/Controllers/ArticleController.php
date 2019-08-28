@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Article\Models\Article;
 use Modules\Files\Entities\TypeFile;
+use Modules\Article\Models\OtherArticle;
 
 class ArticleController extends Controller
 {
@@ -16,6 +17,10 @@ class ArticleController extends Controller
   }
 
   public function show($slug) {
+    $article = OtherArticle::where('url_key', $slug)->first();
+    $relatedArticles = collect();
+    if($article) return view('article::show', compact('article', 'relatedArticles'));
+
     $article = Article::where('url_key', $slug)->firstOrFail();
     if(!$article->active) {
       return redirect()->route('main');

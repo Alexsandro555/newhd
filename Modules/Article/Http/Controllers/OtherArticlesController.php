@@ -20,5 +20,4 @@ class OtherArticlesController extends Controller
   {
     $this->model = new OtherArticle;
   }
-
 }
