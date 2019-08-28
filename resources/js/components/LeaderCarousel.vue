@@ -1,6 +1,6 @@
 <template>
   <div>
-    <carousel name="carousel2" style="width: 1200px; height: 270px"  :paginationColor="'#FFFFFF'" :autoplay="true" :loop="true" :pagination-enabled=false :navigation-enabled=false :per-page=1  :per-page-custom="[[480, 1], [768, 1]]">
+    <carousel name="carousel2" style="width: 1200px; height: 270px"  :paginationColor="'#FFFFFF'" :autoplay="true" :loop="true" :pagination-enabled=true :navigation-enabled=false :per-page=1  :per-page-custom="[[480, 1], [768, 1]]">
       <slide v-for="slide in slides" :key="slide.id" class='center_message' id='centr_msg'>
         <div @if="slide.files.length>0">
           <img :src="'/storage/'+slide.files[0].config.files.main.filename" style='float:right'/><br/>
