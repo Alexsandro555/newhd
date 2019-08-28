@@ -8,6 +8,8 @@ use Modules\Article\Models\Article;
 use Illuminate\Routing\Controller;
 use Modules\Initializer\Traits\ControllerTrait;
 use Modules\Initializer\Traits\DefaultTrait;
+use Modules\Article\Models\ArticleOtherArticle;
+use Modules\Article\Models\OtherArticle;
 
 class ArticlesController extends Controller
 {
@@ -52,5 +54,14 @@ class ArticlesController extends Controller
     $article->content = $this->replace($content);
     $article->save();
     return $article;
+  }
+
+  public function binding(Request $request)
+  {
+    $otherArticles = OtherArticle::find($request->other_article_ids);
+    foreach($otherArticles as $otherArticle) {
+      $otherArticle->articles()->sync($request->article_ids);
+    }
+    return ArticleOtherArticle::whereIn('other_article_id', $request->other_article_ids)->get();
   }
 }

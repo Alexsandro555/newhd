@@ -109,6 +109,10 @@
             text: 'Типы статей',
             path: '/article-types'
           },
+          {
+            text: 'Привязка статей',
+            path: '/binding-articles'
+          },
           /*{
             text: 'Новости',
             path: '/news'

@@ -35,6 +35,7 @@ import EditImages from '@file/vue/EditImages'
 import TypeFile from '@file/vue/TypeFile'
 import ListOtherArticles from '@article/vue/OtherArticle/ListOtherArticles'
 import EditOtherArticle from '@article/vue/OtherArticle/EditOtherArticle'
+import BindingArticles from '@article/vue/Binding/Articles'
 //const EditProducer = () => import('@product/vue/Producer/EditProducer')
 import ListArticleType from '@article/vue/ArticleType/ListArticleType'
 import EditArticleType from '@article/vue/ArticleType/EditArticleType'
@@ -283,6 +284,11 @@ export const routes = [
         path: '/type-file',
         name: 'type-file',
         component: TypeFile
+      },
+      {
+        path: '/binding-articles',
+        name: 'binding-articles',
+        component: BindingArticles
       }
     ]
   }

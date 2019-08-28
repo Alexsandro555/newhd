@@ -77,4 +77,9 @@ class OtherArticle extends Model
   {
     return $this->morphMany(File::class, 'fileable');
   }
+
+  public function articles()
+  {
+    return $this->belongsToMany(Article::class, 'article_other_articles');
+  }
 }

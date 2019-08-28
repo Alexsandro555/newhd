@@ -13,6 +13,10 @@
   display: none;
 }
 
+.leader.application.theme--light {
+  background: none;
+}
+
 div,
 span,
 table,

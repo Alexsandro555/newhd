@@ -19,6 +19,7 @@ Route::middleware('auth:api')->prefix('articles')->group(function() {
   Route::post('/default', 'ArticlesController@create');
   Route::delete('/', 'ArticlesController@delete');
   Route::patch('/', 'ArticlesController@save');
+  Route::post('/binding', 'ArticlesController@binding');
 });
 
 
@@ -38,4 +39,13 @@ Route::middleware('auth:api')->prefix('other-articles')->group(function() {
   Route::post('/default', 'OtherArticlesController@create');
   Route::delete('/', 'OtherArticlesController@delete');
   Route::patch('/', 'OtherArticlesController@save');
+});
+
+
+Route::middleware('auth:api')->prefix('article-other-article')->group(function() {
+  Route::get('/', 'ArticleOtherArticleController@index');
+  Route::post('/', 'ArticleOtherArticleController@load');
+  Route::post('/default', 'ArticleOtherArticleController@create');
+  Route::delete('/', 'ArticleOtherArticleController@delete');
+  Route::patch('/', 'ArticleOtherArticleController@save');
 });
