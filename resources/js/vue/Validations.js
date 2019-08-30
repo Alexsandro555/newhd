@@ -25,6 +25,9 @@ class ValidationConvert {
           return regex.test(v) || 'Допустимы только цифры'
         })
       }
+      if(key == 'email') {
+        result.push(v => /.+@.+/.test(v) || 'E-mail должен иметь валидный формат',)
+      }
     }
     return result;
   }

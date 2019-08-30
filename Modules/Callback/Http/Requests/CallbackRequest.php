@@ -14,9 +14,9 @@ class CallbackRequest extends FormRequest
   public function rules()
   {
     return [
-      'fio' => 'required|max:255',
-      'company_name' => 'max:50',
-      'telephone' => 'required|max:50',
+      'fio' => 'required|max:60',
+      'company' => 'max:60',
+      'tel' => 'required|max:60',
       'email' => 'email'
     ];
   }

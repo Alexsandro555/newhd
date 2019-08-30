@@ -6,40 +6,55 @@ window.Vue = Vue
 //===========Vuex==========================================
 import Vuex from 'vuex'
 Vue.use(Vuex)
+import mutations from "./vuex/mutations";
+import getters from "./vuex/getters";
+//===========End Vuex======================================
 
-// Обратный звонок
-import Callback from '@callback/vue/callbacks/Callback.vue'
-import callback from '@callback/vuex/callbacks/state'
-Vue.component('callback', Callback)
+//===========Callback======================================
+//import Callback from '@callback/vue/callbacks/Callback.vue'
+//import callback from '@callback/vuex/callbacks/state'
+//Vue.component('callback', Callback)
+//===========EndCallback===================================
 
 
 //==========Vuetify========================================
 import Vuetify from 'vuetify'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
-//import 'vuetify/dist/vuetify.min.css'
+import 'vuetify/dist/vuetify.min.css'
 Vue.use(Vuetify)
+//==========End Vuetify====================================
 
-// Initializer
+
+//==========Vee-validate===================================
+import ru from 'vee-validate/dist/locale/ru';
+import VeeValidate, { Validator } from 'vee-validate'
+Vue.use(VeeValidate)
+Validator.localize('ru', ru)
+//==========End Vee-validate================================
+
+//=========Initializer======================================
 import initializer from '@initializer/vuex/initializer/state'
+//=========End Initializer==================================
 
-import cart from '@cart/vuex/store'
-
-import mutations from "./vuex/mutations";
-import getters from "./vuex/getters";
-
+//=========Global components================================
 import tab from './components/Tab'
 Vue.component('tab', tab)
 
 import LeaderCarousel from './components/LeaderCarousel'
 Vue.component('LeaderCarousel', LeaderCarousel)
 
-const store = new Vuex.Store({
-  modules: {
-    callback,
-    initializer,
-  },
-  mutations,
-  getters
+import CallbackForm from '@callback/vue/callbacks/Form'
+Vue.component('callback-form', CallbackForm)
+//=========End Global components============================
+
+
+const store = new Vuex.Store(
+  {
+      modules: {
+        initializer,
+      },
+      mutations,
+      getters
   }
 )
 

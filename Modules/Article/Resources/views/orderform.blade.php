@@ -1,63 +1,49 @@
-<form action="/callback" method="post" name="zakaz_tovara">
-  <table class="orderform" cellpadding="0" cellspacing="0">
-    <tbody valign="top">
-    <tr valign="middle">
-      <th colspan="2">
-        <h1><span>Форма запроса на оборудование</span></h1><br>
-        <input type="hidden" name="_token" id="csrf-token" value="{{ csrf_token() }}" />
-      </th>
-    </tr>
-    <tr valign="middle">
-      <td class="aright">
-        Как Вас зовут? (Ф.И.О): <span class="red">*</span>&nbsp;
-      </td>
-      <td>
-        <input name="fio" size="60" value="" type="text">
-      </td>
-    </tr>
-    <tr valign="middle">
-      <td class="aright">
-        Название Вашей компании: <span class="red">*</span>&nbsp;
-      </td>
-      <td>
-        <input name="company" size="60" value="" type="text">
-      </td>
-    </tr>
-    <tr valign="middle">
-      <td class="aright">
-        Ваш контактный телефон: <span class="red">*</span>&nbsp;
-      </td>
-      <td>
-        <input name="tel" size="60" value="" type="text">
-      </td>
-    </tr>
-    <tr valign="middle">
-      <td class="aright">
-        Ваш электронный адрес (E-mail):
-      </td>
-      <td>
-        <input name="email" size="60" value="" type="text">
-      </td>
-    </tr>
-    <tr valign="middle">
-      <td>
-        Запрос:
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <textarea name="description" style="width: 94%; height: 100px;"></textarea>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="red">* Поля обязательные для заполнения</span>
-      </td>
-      <td class="aright">
-        <input type='submit' value='Заказать' />
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</form>
-<br><br>
+
+<v-card>
+  <v-card-title>
+    Заголовок карточки
+  </v-card-title>
+  <v-card-text>
+    <callback-form>
+      <template slot-scope="{form, messages, getRules}">
+        <v-text-field
+          name="fio"
+          label="Как вас зовут? (Ф.И.О.)"
+          v-model="form.fio"
+          :counter="60"
+          :rules="getRules({required: true, max: 60})"
+          :error-messages="messages.fio"
+          required>
+        </v-text-field>
+        <v-text-field
+          name="company"
+          label="Название Вашей компании"
+          v-model="form.company"
+          :counter="60"
+          :rules="getRules({max: 60})"
+          :error-messages="messages.company">
+        </v-text-field>
+        <v-text-field
+          name="tel"
+          label="Ваш контактный телефон"
+          v-model="form.tel"
+          :counter="60"
+          :rules="getRules({max: 60})"
+          :error-messages="messages.tel">
+        </v-text-field>
+        <v-text-field
+          name="email"
+          label="Ваш электронный адрес (E-mail)"
+          v-model="form.email"
+          :counter="60"
+          :rules="getRules({email: true})"
+          :error-messages="messages.email">
+        </v-text-field>
+      </template>
+    </callback-form>
+
+
+
+  </v-card-text>
+</v-card>
+

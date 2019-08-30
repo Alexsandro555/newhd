@@ -476,3 +476,7 @@ div[name="main"]>p {
   background: url("/images/header_bot_bg.jpg") repeat-x bottom right;
 }
 
+.form-error {
+  color: red;
+}
+
